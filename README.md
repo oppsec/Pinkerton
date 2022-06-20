@@ -3,7 +3,7 @@
 
 
 <div align="center">
-    <img src="https://wikiimg.tojsiabtv.com/wikipedia/en/thumb/1/12/Pinkerton_logo.svg/1200px-Pinkerton_logo.svg.png" width="300">
+    <img src="./assets/banner.png">
 </div>
 
 <br>
