@@ -1,7 +1,10 @@
+import re
+
 from requests import get, exceptions
 from urllib3 import disable_warnings
 from rich import print
-import re
+
+#from src.pinkerton.modules.secret import secret_searcher
 
 disable_warnings()
 
@@ -11,7 +14,7 @@ def check_host(args) -> None:
     try:
         response = get(args.u, verify=False)
         status_code: int = response.status_code
-        body: str = response.text
+        body = response.text
 
         status_error = f"[bold white on red][!] Host returned status code {status_code} [/]"
 
@@ -26,10 +29,21 @@ def check_host(args) -> None:
 def extract_js(args, body):
     " Extract JavaScript files links from page source "
 
-    print(f"[bold on green] Extracting JavaScript files from [white]{args.u}[/] [/]")
-    
-    #pattern = r'/src="(.+\.js)"/g'
-    pattern = r'src="(.*\.js)"'
-    link = re.findall(pattern, body)
+    # Connected sucessfully with target and start extractor
+    print(f"[white bold on green][*] Extracting JavaScript files from [white]{args.u}[/] [/]")
 
-    print(link)
+    pattern = r'src="(.*?\.js)"'
+    links = re.findall(pattern, body)
+
+    # Return number of JavaScript files found on the source
+    print(f"[white bold on green][*] Found {len(links)} files in [white]{args.u}[/] [/]")
+
+    for link in links:
+        final_url = f"{args.u}{link}"
+
+        if link.startswith("http"):
+            print(f"[white bold on green] > [white]{link}[/] [/]")
+            #secret_searcher(link, final_url)
+        else:
+            final_url = f"{args.u}{link}"
+            print(f"[white bold on green] > [white]{final_url}[/] [/]")

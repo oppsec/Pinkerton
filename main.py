@@ -4,7 +4,7 @@ from src.pinkerton.main import check_host
 from argparse import ArgumentParser
 
 if __name__ == "__main__":
-
+    
     banner()
 
     parser = ArgumentParser()
