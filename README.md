@@ -1,10 +1,8 @@
-# Pinkerton (In development ⚠️)
+# Pinkerton
 > Investigating JavaScripts files since 1850
 
+[![asciicast](https://asciinema.org/a/pGFTFFTzgtYWH98R4cYJf5cXY.svg)](https://asciinema.org/a/pGFTFFTzgtYWH98R4cYJf5cXY)
 
-<div align="center">
-    <img src="./assets/banner.png">
-</div>
 
 <br>
 
@@ -62,6 +60,13 @@ If you want to use pinkerton in a Docker container, follow this commands:
 
 <br><br>
 
+### 📚 To-Do
+- [ ] Add more secrets regex pattern
+- [ ] Improve JavaScript file extract function
+- [ ] Improve pattern match system
+- [ ] Add pass list file method
+
+<br><br>
 
 ### 🔨 Contributing
 
@@ -75,6 +80,11 @@ A quick guide of how to contribute with the project.
 5. Commit and make a git push
 6. Open a pull request
 ```
+
+<br><br>
+
+### 🙏 Credits
+- m4ll0k (SecretFinder creator) for the regex patterns
 
 <br><br>
 

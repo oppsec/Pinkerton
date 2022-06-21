@@ -1,3 +1,7 @@
+# 1.2 - 21/06/2022
+- Secret searcher module finished!
+- Improved the code
+
 # 1.1 - 20/06/2022
 - JavaScript file link extractor finished!
 - Improved the code
