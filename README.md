@@ -1,4 +1,4 @@
-# Pinkerton
+# 🕵️ Pinkerton
 > Investigating JavaScripts files since 1850
 
 [![asciicast](https://asciinema.org/a/pGFTFFTzgtYWH98R4cYJf5cXY.svg)](https://asciinema.org/a/pGFTFFTzgtYWH98R4cYJf5cXY)
