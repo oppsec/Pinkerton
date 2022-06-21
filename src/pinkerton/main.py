@@ -4,7 +4,8 @@ from requests import get, exceptions
 from urllib3 import disable_warnings
 from rich import print
 
-#from src.pinkerton.modules.secret import secret_searcher
+from src.pinkerton.settings import props
+from src.pinkerton.modules.secret import direct_scan, passed_scan
 
 disable_warnings()
 
@@ -12,7 +13,7 @@ def check_host(args) -> None:
     " Check if hosts is alive "
 
     try:
-        response = get(args.u, verify=False)
+        response = get(args.u, **props)
         status_code: int = response.status_code
         body = response.text
 
@@ -43,7 +44,8 @@ def extract_js(args, body):
 
         if link.startswith("http"):
             print(f"[white bold on green] > [white]{link}[/] [/]")
-            #secret_searcher(link, final_url)
+            direct_scan(link)
         else:
             final_url = f"{args.u}{link}"
             print(f"[white bold on green] > [white]{final_url}[/] [/]")
+            passed_scan(final_url)
