@@ -7,11 +7,11 @@
 <br>
 
 <p align="center">
-    <img src="https://img.shields.io/github/license/oppsec/tomcter?color=yellow&logo=github&logoColor=yellow&style=for-the-badge">
-    <img src="https://img.shields.io/github/issues/oppsec/tomcter?color=yellow&logo=github&logoColor=yellow&style=for-the-badge">
-    <img src="https://img.shields.io/github/stars/oppsec/tomcter?color=yellow&label=STARS&logo=github&logoColor=yellow&style=for-the-badge">
-    <img src="https://img.shields.io/github/forks/oppsec/tomcter?color=yellow&logo=github&logoColor=yellow&style=for-the-badge">
-    <img src="https://img.shields.io/github/languages/code-size/oppsec/tomcter?color=yellow&logo=github&logoColor=yellow&style=for-the-badge">
+    <img src="https://img.shields.io/github/license/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
+    <img src="https://img.shields.io/github/issues/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
+    <img src="https://img.shields.io/github/stars/oppsec/Pinkerton?color=green&label=STARS&logo=github&logoColor=green&style=for-the-badge">
+    <img src="https://img.shields.io/github/forks/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
+    <img src="https://img.shields.io/github/languages/code-size/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
 </p>
 
 ___
