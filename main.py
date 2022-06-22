@@ -7,8 +7,9 @@ if __name__ == "__main__":
     
     banner()
 
-    parser = ArgumentParser()
-    parser.add_argument("-u", help="Specify the target URL", required=True)
+    parser = ArgumentParser(description="List of arguments that can be passed in Pinkerton")
+    parser.add_argument("-u", help="Specify the target URL", required=False)
+    parser.add_argument("-l", help="Specify a file with a list of URLs", required=False)
     args = parser.parse_args()
 
     check_host(args)

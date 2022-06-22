@@ -12,12 +12,21 @@ disable_warnings()
 def check_host(args) -> None:
     " Check if hosts is alive "
 
+    # Need to finish list input module
+
+    if(args.l):
+        content = open(args.l).readlines()
+
+        for target in content:
+            if not target:
+                pass
+
     try:
         response = get(args.u, **props)
         status_code: int = response.status_code
         body = response.text
 
-        status_error = f"[bold white on red][!] Host returned status code {status_code} [/]"
+        status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
         alive = lambda success = 200: status_code == success
         (extract_js(args, body)) if alive() else print(status_error)
