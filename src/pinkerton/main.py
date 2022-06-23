@@ -9,52 +9,76 @@ from src.pinkerton.modules.secret import direct_scan, passed_scan
 
 disable_warnings()
 
+# Yes, I duplicated the code, I will create a future for this on the future...
+
 def check_host(args) -> None:
     " Check if hosts is alive "
 
-    # Need to finish list input module
-
     if(args.l):
-        content = open(args.l).readlines()
+        list_file = open(args.l).readlines()
 
-        for target in content:
-            if not target:
+        for url in list_file:
+            if not url:
                 pass
 
-    try:
-        response = get(args.u, **props)
-        status_code: int = response.status_code
-        body = response.text
+            url = url.rstrip()
 
-        status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
+            try:
+                response = get(url, **props)
+                status_code: int = response.status_code
+                body = response.text
 
-        alive = lambda success = 200: status_code == success
-        (extract_js(args, body)) if alive() else print(status_error)
+                status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
-    except exceptions.ConnectionError as con_error:
-        return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
-    except exceptions.InvalidURL as invalid_error:
-        return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
+                if response.ok:
+                    extract_js(url, body)
+                else:
+                    return status_error
 
-def extract_js(args, body):
+            except exceptions.ConnectionError as con_error:
+                return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
+            except exceptions.InvalidURL as invalid_error:
+                return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
+
+    else:
+
+        try:
+            response = get(args.u, **props)
+            status_code: int = response.status_code
+            body = response.text
+
+            status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
+
+            if response.ok:
+                extract_js(args, body)
+            else:
+                return status_error
+
+        except exceptions.ConnectionError as con_error:
+            return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
+        except exceptions.InvalidURL as invalid_error:
+            return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
+
+
+def extract_js(url, body):
     " Extract JavaScript files links from page source "
 
     # Connected sucessfully with target and start extractor
-    print(f"[white bold on green][*] Extracting JavaScript files from [white]{args.u}[/] [/]")
+    print(f"\n[white bold on green][*] Extracting JavaScript files from [white on yellow]{url}[/][/]")
 
     pattern = r'src="(.*?\.js)"'
     links = re.findall(pattern, body)
 
     # Return number of JavaScript files found on the source
-    print(f"[white bold on green][*] Found {len(links)} files in [white]{args.u}[/] [/]")
+    print(f"[white bold on green][*] Found {len(links)} files in [white on yellow]{url}[/][/]")
 
     for link in links:
-        final_url = f"{args.u}{link}"
+        final_url = f"{url}{link}"
 
         if link.startswith("http"):
             print(f"[white bold on green] > [white]{link}[/] [/]")
             direct_scan(link)
         else:
-            final_url = f"{args.u}{link}"
+            final_url = f"{url}{link}"
             print(f"[white bold on green] > [white]{final_url}[/] [/]")
             passed_scan(final_url)

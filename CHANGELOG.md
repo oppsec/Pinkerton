@@ -1,3 +1,6 @@
+# 1.2b - 21/06/2022
+- Pinkerton accept a text file with URLs now!
+
 # 1.2 - 21/06/2022
 - Secret searcher module finished!
 - Improved the code

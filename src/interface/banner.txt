@@ -6,4 +6,4 @@
 /_/   /_/_/ /_/_/|_|\___/_/   \__/\____/_/ /_/ 
                                      
 Investigating JavaScripts files since 1850
-build: 1.2
+build: 1.2b
