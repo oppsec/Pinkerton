@@ -9,55 +9,27 @@ from src.pinkerton.modules.secret import direct_scan, passed_scan
 
 disable_warnings()
 
-# Yes, I duplicated the code, I will create a future for this on the future...
-
 def check_host(args) -> None:
     " Check if hosts is alive "
 
-    if(args.l):
-        list_file = open(args.l).readlines()
+    url = args.u
 
-        for url in list_file:
-            if not url:
-                pass
+    try:
+        response = get(url, **props)
+        status_code: int = response.status_code
+        body = response.text
 
-            url = url.rstrip()
+        status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
-            try:
-                response = get(url, **props)
-                status_code: int = response.status_code
-                body = response.text
+        if response.ok:
+            extract_js(url, body)
+        else:
+            return status_error
 
-                status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
-
-                if response.ok:
-                    extract_js(url, body)
-                else:
-                    return status_error
-
-            except exceptions.ConnectionError as con_error:
-                return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
-            except exceptions.InvalidURL as invalid_error:
-                return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
-
-    else:
-
-        try:
-            response = get(args.u, **props)
-            status_code: int = response.status_code
-            body = response.text
-
-            status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
-
-            if response.ok:
-                extract_js(args, body)
-            else:
-                return status_error
-
-        except exceptions.ConnectionError as con_error:
-            return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
-        except exceptions.InvalidURL as invalid_error:
-            return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
+    except exceptions.ConnectionError as con_error:
+        return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
+    except exceptions.InvalidURL as invalid_error:
+        return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
 
 
 def extract_js(url, body):
