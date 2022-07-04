@@ -42,7 +42,7 @@ def extract_js(url, body):
     links = re.findall(pattern, body)
 
     # Return number of JavaScript files found on the source
-    print(f"[white bold on green][*] Found {len(links)} files in [white on yellow]{url}[/][/]")
+    print(f"[white bold on green][*] Scanning {len(links)} files in [white on yellow]{url}[/][/]")
 
     for link in links:
         final_url = f"{url}{link}"
