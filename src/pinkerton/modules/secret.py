@@ -8,7 +8,8 @@ import re
 
 regex_list = {
     'Google API': r'AIza[0-9A-Za-z-_]{35}',
-    'Firebase': r'AAAA[A-Za-z0-9_-]{7}:[A-Za-z0-9_-]{140}',
+    'Firebase Key': r'AAAA[A-Za-z0-9_-]{7}:[A-Za-z0-9_-]{140}',
+    "Firebase URL": r".*firebaseio\.com",
     'Google Captcha Key': r'6L[0-9A-Za-z-_]{38}|^6[0-9a-zA-Z_-]{39}$',
     "Amazon AWS Access Key ID": r"AKIA[0-9A-Z]{16}",
     "Amazon MWS Auth Token": r"amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
