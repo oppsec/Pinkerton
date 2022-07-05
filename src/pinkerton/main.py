@@ -22,9 +22,10 @@ def check_host(args) -> None:
         status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
         if response.ok:
+            print(f"> Connected sucessfully with {url}")
             extract_js(url, body)
         else:
-            return status_error
+            return print(status_error)
 
     except exceptions.ConnectionError as con_error:
         return print(f"[red][!] Connection error on host {args.u} | {con_error} [/]")
