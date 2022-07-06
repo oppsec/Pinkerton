@@ -17,12 +17,12 @@ def check_host(args) -> None:
     try:
         response = get(url, **props)
         status_code: int = response.status_code
-        body = response.text
+        body: str = response.text
 
-        status_error = f"[bold white on red][!] Host returned status code: {status_code} [/]"
+        status_error: str = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
         if response.ok:
-            print(f"> Connected sucessfully with {url}")
+            print(f"[bold white on green]> Connected sucessfully with {url}[/] [/]")
             extract_js(url, body)
         else:
             return print(status_error)
@@ -33,25 +33,24 @@ def check_host(args) -> None:
         return print(f"[red][!] You've passed an invalid url | {invalid_error} [/]")
 
 
-def extract_js(url, body):
+def extract_js(url, body) -> None:
     " Extract JavaScript files links from page source "
 
     # Connected sucessfully with target and start extractor
-    print(f"\n[white bold on green][*] Extracting JavaScript files from [white on yellow]{url}[/][/]")
+    print(f"\n[bold white on green][*] Extracting JavaScript files from [white on yellow]{url}[/][/]")
 
     pattern = r'src="(.*?\.js)"'
     links = re.findall(pattern, body)
 
-    # Return number of JavaScript files found on the source
-    print(f"[white bold on green][*] Scanning {len(links)} files in [white on yellow]{url}[/][/]")
+    # Return number of JavaScript files found on the webpage source
+    print(f"[bold white on green][*] Scanning {len(links)} JavaScript files [/]")
 
     for link in links:
         final_url = f"{url}{link}"
 
         if link.startswith("http"):
-            print(f"[white bold on green] > [white]{link}[/] [/]")
+            print(f"[bold white on green] > {link} [/]")
             direct_scan(link)
         else:
-            final_url = f"{url}{link}"
-            print(f"[white bold on green] > [white]{final_url}[/] [/]")
+            print(f"[bold white on green] > {final_url} [/]")
             passed_scan(final_url)
