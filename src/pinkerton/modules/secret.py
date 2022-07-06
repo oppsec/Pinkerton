@@ -70,7 +70,7 @@ def direct_scan(link) -> None:
         match = re.findall(pattern, content)
 
         if(match):
-            print(f"\n[bold white on black][!] {key} found in {link}: {match} [/]\n")
+            print(f"\n[bold white][!] {key} found in {link}: {match} [/]\n")
         else:
             pass
 
@@ -85,6 +85,6 @@ def passed_scan(final_url):
         match = re.findall(pattern, content)
 
         if(match):
-            print(f"\n[bold white on black][!] {key} found in {final_url}: {match} [/]\n")
+            print(f"\n[bold white][!] {key} found in {final_url}: {match} [/]\n")
         else:
             pass
