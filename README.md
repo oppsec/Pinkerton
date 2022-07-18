@@ -53,6 +53,11 @@ If you want to use pinkerton in a Docker container, follow this commands:
 
 <br><br>
 
+### 🎥 Demo
+[![asciicast](https://asciinema.org/a/7gybqzcDsIm0nkDhUhhI9JFRA.svg)](https://asciinema.org/a/7gybqzcDsIm0nkDhUhhI9JFRA)
+
+<br><br>
+
 ### ✨ Features
 - Works with ProxyChains
 - Fast scan
