@@ -22,7 +22,7 @@ def check_host(args) -> None:
         status_error: str = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
         if response.ok:
-            print(f"[bold white on green]> Connected sucessfully with {url}[/] [/]")
+            print(f"[bold white on green]> Connected sucessfully with {url}[/]")
             extract_js(url, body)
         else:
             return print(status_error)
