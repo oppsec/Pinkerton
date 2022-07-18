@@ -22,7 +22,7 @@ def check_host(args) -> None:
         status_error: str = f"[bold white on red][!] Host returned status code: {status_code} [/]"
 
         if response.ok:
-            print(f"[bold white on green]> Connected sucessfully with {url}[/]")
+            print(f"[bold white on green]> Connected sucessfully with [bold white on yellow]{url}[/][/]")
             extract_js(url, body)
         else:
             return print(status_error)
@@ -49,8 +49,8 @@ def extract_js(url, body) -> None:
         final_url = f"{url}{urls}"
 
         if urls.startswith("http"):
-            print(f"[bold white on green] > Scanning: {urls} [/]")
+            print(f"[bold white on green] > Scanning: [bold white on yellow]{urls}[/][/]")
             direct_scan(urls)
         else:
-            print(f"[bold white on green] > Scanning: {final_url} [/]")
+            print(f"[bold white on green] > Scanning: [bold white on yellow]{final_url}[/][/]")
             passed_scan(final_url)
