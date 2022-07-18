@@ -39,18 +39,18 @@ def extract_js(url, body) -> None:
     # Connected sucessfully with target and start extractor
     print(f"\n[bold white on green][*] Extracting JavaScript files from [white on yellow]{url}[/][/]")
 
-    pattern = r'src="(.*?\.js)"'
-    links = re.findall(pattern, body)
+    re_jsfiles = r'src="(.*?\.js)"'
+    jsfiles_urls = re.findall(re_jsfiles, body)
 
     # Return number of JavaScript files found on the webpage source
-    print(f"[bold white on green][*] Scanning {len(links)} JavaScript files [/]")
+    print(f"[bold white on green][*] Scanning {len(jsfiles_urls)} JavaScript files [/]")
 
-    for link in links:
-        final_url = f"{url}{link}"
+    for urls in jsfiles_urls:
+        final_url = f"{url}{urls}"
 
-        if link.startswith("http"):
-            print(f"[bold white on green] > {link} [/]")
-            direct_scan(link)
+        if urls.startswith("http"):
+            print(f"[bold white on green] > Scanning: {urls} [/]")
+            direct_scan(urls)
         else:
-            print(f"[bold white on green] > {final_url} [/]")
+            print(f"[bold white on green] > Scanning: {final_url} [/]")
             passed_scan(final_url)

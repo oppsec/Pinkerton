@@ -1,3 +1,17 @@
+# 🎉 1.4 - 18/07/2022
+- Added 5 new secrets regex patterns:
+    - PGP Private Key Block
+    - SSH DSA Private Key
+    - SSH EC Private Key
+    - SSH RSA Key
+    - SSH ED25519 Public Key
+
+- Added jsbeautifier lib to improve regex pattern matching
+- Fixed blank regex pattern matching caused by not beautified code
+- Fixed infinite JavaScript file scanning
+
+<br>
+
 # 🎉 1.3 - 04/07/2022
 - Added and updated a bunch of secrets regex:
     - Cloudinary
