@@ -43,7 +43,7 @@ def extract_js(url, body) -> None:
     jsfiles_urls = re.findall(re_jsfiles, body)
 
     # Return number of JavaScript files found on the webpage source
-    print(f"[bold white on green][*] Scanning {len(jsfiles_urls)} JavaScript files [/]")
+    print(f"[bold white on green][*] Scanning {len(jsfiles_urls)} JavaScript file(s) [/]")
 
     for urls in jsfiles_urls:
         final_url = f"{url}{urls}"
