@@ -87,7 +87,7 @@ A quick guide of how to contribute with the project.
 
 ### 🙏 Credits
 - [m4ll0k (SecretFinder creator)](https://github.com/m4ll0k) for the secrets regex patterns
-- [(h33lit (Jubaer Alnazi)](https://github.com/h33tlit) for the secrets regex patterns
+- [h33lit (Jubaer Alnazi)](https://github.com/h33tlit) for the secrets regex patterns
 
 <br><br>
 
