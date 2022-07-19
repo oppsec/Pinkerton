@@ -8,7 +8,7 @@ ENV PIP_NO_CACHE_DIR=off
 WORKDIR /Pinkerton
 
 RUN apt-get update && \
-    apt-get install -y openssl python3-dev git apt-utils
+    apt-get install -y openssl python3 git apt-utils
 
 # Create directories
 COPY . .
