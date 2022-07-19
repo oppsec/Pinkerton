@@ -2,7 +2,7 @@
 > Investigating JavaScripts files since 1850
 
 <div align="center">
-    <img src="./assets/preview.png">
+    <img src="./assets/banner.png">
 </div>
 
 
