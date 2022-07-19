@@ -1,10 +1,14 @@
-# Install alpine, python3 and pip
-FROM alpine:latest
+FROM python:3.8-slim
 LABEL maintainer="oppsec <https://github.com/oppsec>"
 RUN apk add --no-cache python3 py3-pip
 
-# Create directories
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV PIP_NO_CACHE_DIR=off
+
 WORKDIR /Pinkerton
+
+# Create directories
 COPY . .
 
 # Install libraries and run
