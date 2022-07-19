@@ -8,7 +8,7 @@ ENV PIP_NO_CACHE_DIR=off
 WORKDIR /Pinkerton
 
 RUN apt-get update && \
-    apt-get install -y libffi-dev libxml2-dev libxslt-dev libssl-dev openssl autoconf g++ python3-dev libkrb5-dev git
+    apt-get install -y openssl python3-dev git apt-utils
 
 # Create directories
 COPY . .
