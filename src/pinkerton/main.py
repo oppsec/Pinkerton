@@ -4,7 +4,6 @@ from requests import get, exceptions
 from urllib3 import disable_warnings
 from rich import print
 
-from src.pinkerton.settings import props
 from src.pinkerton.modules.secret import direct_scan, passed_scan
 
 disable_warnings()
@@ -39,18 +38,18 @@ def extract_js(url, body) -> None:
     # Connected sucessfully with target and start extractor
     print(f"\n[bold white on green][*] Extracting JavaScript files from [white on yellow]{url}[/][/]")
 
-    re_jsfiles = r'src="(.*?\.js)"'
-    jsfiles_urls = re.findall(re_jsfiles, body)
+    re_jsfiles = r'src="(.*?\.js)(\?.*?)?"'
+    jsfiles = re.findall(re_jsfiles, body)
 
     # Return number of JavaScript files found on the webpage source
-    print(f"[bold white on green][*] Scanning {len(jsfiles_urls)} JavaScript file(s) [/]")
+    print(f"[bold white on green][*] Scanning {len(jsfiles)} JavaScript file(s) [/]")
 
-    for urls in jsfiles_urls:
-        final_url = f"{url}{urls}"
+    for jsfile, _ in jsfiles:
+        final_url = f"{url}{jsfile}"
 
-        if urls.startswith("http"):
-            print(f"[bold white on green] > Scanning: [bold white on yellow]{urls}[/][/]")
-            direct_scan(urls)
+        if jsfile.startswith("http"):
+            print(f"[bold white on green] > Scanning: [bold white on yellow]{jsfile}[/][/]")
+            direct_scan(jsfile)
         else:
             print(f"[bold white on green] > Scanning: [bold white on yellow]{final_url}[/][/]")
             passed_scan(final_url)
