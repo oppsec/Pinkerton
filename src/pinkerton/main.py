@@ -4,6 +4,7 @@ from requests import get, exceptions
 from urllib3 import disable_warnings
 from rich import print
 
+from src.pinkerton.settings import props
 from src.pinkerton.modules.secret import direct_scan, passed_scan
 
 disable_warnings()
