@@ -14,7 +14,7 @@ def get_user_agent() -> str:
 headers = {
     'User-Agent': get_user_agent(),
     'Connection': 'keep-alive',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 }
 
 props = {

@@ -62,7 +62,7 @@ regex_list = {
 def direct_scan(link) -> None:
     " Open JavaScript file without parsing URL before requesting "
     
-    response: function = get(link, **props)
+    response: function = get(link, **props, timeout=30)
     content: str = response.text
     content: str = jsbeautifier.beautify(content)
 
@@ -78,7 +78,7 @@ def direct_scan(link) -> None:
 def passed_scan(final_url):
     " Parse the URL before open JavaScript directly "
 
-    response: function = get(final_url, **props)
+    response: function = get(final_url, **props, timeout=30)
     content: str = response.text
     content: str = jsbeautifier.beautify(content)
 
