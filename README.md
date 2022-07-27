@@ -5,15 +5,14 @@
     <img src="./assets/banner.png">
 </div>
 
-
 <br>
 
 <p align="center">
-    <img src="https://img.shields.io/github/license/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
-    <img src="https://img.shields.io/github/issues/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
-    <img src="https://img.shields.io/github/stars/oppsec/Pinkerton?color=green&label=STARS&logo=github&logoColor=green&style=for-the-badge">
-    <img src="https://img.shields.io/github/forks/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
-    <img src="https://img.shields.io/github/languages/code-size/oppsec/Pinkerton?color=green&logo=github&logoColor=green&style=for-the-badge">
+    <img src="https://img.shields.io/github/license/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/issues/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/stars/oppsec/pinkerton?color=green&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/forks/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/languages/code-size/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
 </p>
 
 ___
