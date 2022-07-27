@@ -12,6 +12,7 @@
     <img src="https://img.shields.io/github/issues/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
     <img src="https://img.shields.io/github/stars/oppsec/pinkerton?color=green&logo=github&style=for-the-badge">
     <img src="https://img.shields.io/github/forks/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/v/release/oppsec/pinkerton?color=green&logo=github&style=for-the-badge">
     <img src="https://img.shields.io/github/languages/code-size/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
 </p>
 
