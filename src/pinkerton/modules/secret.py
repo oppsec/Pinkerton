@@ -17,8 +17,6 @@ regex_list = {
     "Mailto String": r"(?<=mailto:)[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+",
     "Picatic API Key": r"sk_live_[0-9a-z]{32}",
     "Firebase URL": r".*firebaseio\.com",
-    "Foursquare Secret Key": r"R_[0-9a-f]{32}",
-    "Foursquare Client Key": r"[0-9a-zA-Z_][5,31]",
     "PGP Private Key Block": r"-----BEGIN PGP PRIVATE KEY BLOCK-----",
     "SSH (DSA) Private Key": r"-----BEGIN DSA PRIVATE KEY-----",
     "SSH (EC) Private Key": r"-----BEGIN EC PRIVATE KEY-----",
