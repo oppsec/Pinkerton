@@ -1,3 +1,9 @@
+# 🎉 1.5a - ??/??/2022
+- Added 3 new secrets regex patterns:
+    - Foursquare Secret & Client Key
+    - Slack Webhook+
+    - Slack OAuth Tokens
+
 # 🎉 1.5 - 28/07/2022
 - Added 9 new secrets regex patterns:
     - Artifactory API Token & Password

@@ -1,7 +1,7 @@
               ,;;;,
              ;;;;;;;
           .-'`\, '/_
-        .'   \ ("`(_)    Pinkerton 1.5
+        .'   \ ("`(_)    Pinkerton 1.5a
        / `-,.'\ \_/      Investigating JavaScripts files since 1850
        \  \/\  `--`
         \  \ \
