@@ -9,7 +9,13 @@ import jsbeautifier
 
 regex_list = {
     'Google API': r'AIza[0-9A-Za-z-_]{35}',
+    "Artifactory API Token": r'(?:\s|=|:|"|^)AKC[a-zA-Z0-9]{10,}',
+    "Artifactory Password": r'(?:\s|=|:|"|^)AP[\dABCDEF][a-zA-Z0-9]{8,}',
+    "Cloudinary Basic Auth": r"cloudinary:\/\/[0-9]{15}:[0-9A-Za-z]+@[a-z]+",
     'Firebase Key': r'AAAA[A-Za-z0-9_-]{7}:[A-Za-z0-9_-]{140}',
+    "LinkedIn Secret Key": r"(?i)linkedin(.{0,20})?['\"][0-9a-z]{16}['\"]",
+    "Mailto String": r"(?<=mailto:)[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+",
+    "Picatic API Key": r"sk_live_[0-9a-z]{32}",
     "Firebase URL": r".*firebaseio\.com",
     "PGP Private Key Block": r"-----BEGIN PGP PRIVATE KEY BLOCK-----",
     "SSH (DSA) Private Key": r"-----BEGIN DSA PRIVATE KEY-----",
@@ -23,7 +29,7 @@ regex_list = {
     'Amazon AWS URL' : r's3\.amazonaws.com[/]+|[a-zA-Z0-9_-]*\.s3\.amazonaws.com',
     "Generic API Key": r"(?i)api[_]?key.*['|\"]\w{32,45}['|\"]",
     "Generic Secret": r"(?i)secret.*['|\"]\w{32,45}['|\"]",
-    'Authorization Bearer': r'bearer [a-zA-Z0-9_\-\.=:_\+\/]{5,100}',
+    'Authorization Bearer': r'bbearer [a-zA-Z0-9_\\-\\.=]+',
     'Authorization Basic': r'basic [a-zA-Z0-9=:_\+\/-]{5,100}',
     'Authorization API Key' : r'api[key|_key|\s+]+[a-zA-Z0-9_\-]{5,100}',
     'PayPal Braintree Access Token' : r'access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}',
@@ -35,6 +41,7 @@ regex_list = {
     "Facebook Access Token": r"EAACEdEose0cBA[0-9A-Za-z]+",
     "Facebook OAuth": r"(?i)facebook.*['|\"][0-9a-f]{32}['|\"]",
     'Google OAuth' : r'ya29\.[0-9A-Za-z\-_]+',
+    "Facebook Client ID": r"""(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}""",
     "Google Cloud Platform API Key": r"AIza[0-9A-Za-z\\-_]{35}",
     "Google Cloud Platform OAuth": r"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com",
     "Google Drive API Key": r"AIza[0-9A-Za-z\\-_]{35}",
@@ -54,10 +61,13 @@ regex_list = {
     "Stripe Restricted API Key": r"rk_live_[0-9a-zA-Z]{24}",
     "Twitter Access Token": r"(?i)twitter.*[1-9][0-9]+-\w{40}",
     "Twitter OAuth": r"(?i)twitter.*['|\"]\w{35,44}['|\"]",
+    "Twitter Client ID": r"(?i)twitter(.{0,20})?['\"][0-9a-z]{18,25}",
+    "URL Parameter": r"(?<=\?|\&)[a-zA-Z0-9_]+(?=\=)",
     "Twilio API Key": r"SK[0-9a-fA-F]{32}",
     "Square Access Token": r"sq0atp-[0-9A-Za-z\\-_]{22}",
     "Square OAuth Secret": r"sq0csp-[0-9A-Za-z\\-_]{43}",
-}
+    "IPv4 IP Address": r"\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\b",
+ }
 
 def direct_scan(link) -> None:
     " Open JavaScript file without parsing URL before requesting "
@@ -71,7 +81,7 @@ def direct_scan(link) -> None:
         match = re.findall(pattern, content)
 
         if(match):
-            print(f"\n[bold white][!] {key} found in {link}: {match} [/]\n")
+            print(f"\n[bold green][+] {key} found in {link} ~ [red]{match}[/][/]\n")
         else:
             pass
 
@@ -87,6 +97,6 @@ def passed_scan(final_url):
         match = re.findall(pattern, content)
 
         if(match):
-            print(f"\n[bold white][!] {key} found in {final_url}: {match} [/]\n")
+            print(f"\n[bold green][+] {key} found in {final_url} ~ [red]{match}[/][/]\n")
         else:
             pass

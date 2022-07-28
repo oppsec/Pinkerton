@@ -1,3 +1,20 @@
+# 🎉 1.5 - 28/07/2022
+- Added 9 new secrets regex patterns:
+    - Artifactory API Token & Password
+    - Cloudinary Basic Auth
+    - Facebook Client ID
+    - IPv4 Address
+    - Linkedin Secret Key
+    - Picatic API Key
+    - Mailto String
+    - Slack Token
+    - URL Parameters
+
+- Fixed error message when not parsing arguments
+- Changed status messages icons
+- Changed README.md banner
+- Updated README.md
+
 # 🎉 1.4 - 18/07/2022
 - Added 5 new secrets regex patterns:
     - PGP Private Key Block
