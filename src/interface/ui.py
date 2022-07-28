@@ -6,4 +6,4 @@ def banner() -> str:
     path: str = "src/interface/banner.txt"
     with open(path) as file:
         content = file.read()
-        print(f"[bold green]{content}[/]")
+        print(f"[bold white]{content}[/]")

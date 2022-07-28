@@ -1,8 +1,8 @@
               ,;;;,
              ;;;;;;;
           .-'`\, '/_
-        .'   \ ("`(_)
-       / `-,.'\ \_/
+        .'   \ ("`(_)    Pinkerton 1.5
+       / `-,.'\ \_/      Investigating JavaScripts files since 1850
        \  \/\  `--`
         \  \ \
          / /| |
@@ -10,5 +10,3 @@
   jgs  ( _\ ( _\  #:##        #:##        #:##         #:##
                         #:##        #:##        #:##
                                      
-Pinkerton 1.4
-Investigating JavaScripts files since 1850
