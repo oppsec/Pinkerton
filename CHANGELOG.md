@@ -1,4 +1,21 @@
-# 🎉 1.5a - ??/??/2022
+# 🎉 1.6 - 31/07/2022
+- Added 11 new secrets regex patterns:
+    - URL Schemes
+    - Adobe Client Secret
+    - Alibaba AccessKey ID
+    - Clojars API Token
+    - Doppler API Token
+    - Dynatrace API Token
+    - EasyPost API Token
+    - GitHub App Token
+    - GitHub Personal Access Token
+    - GitLab Personal Access Token
+    - NPM Access Token
+
+- Fixed GCP API Key regex
+- Removed useless else code
+
+# 🎉 1.5a - 28/07/2022
 - Added 2 new secrets regex patterns:
     - Slack Webhook+
     - Slack OAuth Tokens

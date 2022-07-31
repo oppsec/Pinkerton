@@ -37,12 +37,12 @@ regex_list = {
     "MailChimp API Key": r"[0-9a-f]{32}-us[0-9]{1,2}",
     'RSA Private Key' : r'-----BEGIN RSA PRIVATE KEY-----',
     "Heroku API Key": r"(?i)heroku.*[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}",
-    'JWT Token': r'ey[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$',
+    "JWT Token": r'ey[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$',
     "Facebook Access Token": r"EAACEdEose0cBA[0-9A-Za-z]+",
     "Facebook OAuth": r"(?i)facebook.*['|\"][0-9a-f]{32}['|\"]",
-    'Google OAuth' : r'ya29\.[0-9A-Za-z\-_]+',
+    "Google OAuth" : r'ya29\.[0-9A-Za-z\-_]+',
     "Facebook Client ID": r"""(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}""",
-    "Google Cloud Platform API Key": r"AIza[0-9A-Za-z\\-_]{35}",
+    "Google Cloud Platform API Key": r"(?i)\b(AIza[0-9A-Za-z\\-_]{35})(?:['|\"|\n|\r|\s|\x60]|$)",
     "Google Cloud Platform OAuth": r"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com",
     "Google Drive API Key": r"AIza[0-9A-Za-z\\-_]{35}",
     "Google Drive OAuth": r"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com",
@@ -52,8 +52,10 @@ regex_list = {
     "Google OAuth Access Token": r"ya29\\.[0-9A-Za-z\\-_]+",
     "Google YouTube API Key": r"AIza[0-9A-Za-z\\-_]{35}",
     "Google YouTube OAuth": r"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com",
-    'Github Access Token' : r'[a-zA-Z0-9_-]*:[a-zA-Z0-9_\-]+@github\.com*',
+    'GitHub Access Token' : r'[a-zA-Z0-9_-]*:[a-zA-Z0-9_\-]+@github\.com*',
+    "GitHub Personal Access Token": r"ghp_[0-9a-zA-Z]{36}",
     "GitHub URL": r"(?i)github.*['|\"][0-9a-zA-Z]{35,40}['|\"]",
+    "GitHub App Token": r"(ghu|ghs)_[0-9a-zA-Z]{36}",
     "Slack Token": r"(xox[p|b|o|a]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})",
     "Slack Webhook": r"https://hooks.slack.com/services/T\w{8}/B\w{8}/\w{24}",
     "Slack Webhook 2": r"T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}",
@@ -70,6 +72,15 @@ regex_list = {
     "Square Access Token": r"sq0atp-[0-9A-Za-z\\-_]{22}",
     "Square OAuth Secret": r"sq0csp-[0-9A-Za-z\\-_]{43}",
     "IPv4 IP Address": r"\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\b",
+    "URL": r'(https?|ftp)://(-\.)?([^\s/?\.#-]+\.?)+(/[^\s]*)?$iS',
+    "Adobe Client Secret": r'''(?i)\b((p8e-)(?i)[a-z0-9]{32})(?:['|\"|\n|\r|\s|\x60]|$)''',
+    "Alibaba AccessKey ID": r"(?i)\b((LTAI)(?i)[a-z0-9]{20})(?:['|\"|\n|\r|\s|\x60]|$)",
+    "Clojars API Token": r"(?i)(CLOJARS_)[a-z0-9]{60}",
+    "Doppler API Token": r"(dp\.pt\.)(?i)[a-z0-9]{43}",
+    "Dynatrace API Token": r"dt0c01\.(?i)[a-z0-9]{24}\.[a-z0-9]{64}",
+    "EasyPost API Token": r"EZAK(?i)[a-z0-9]{54}",
+    "GitLab Personal Access Token": r"glpat-[0-9a-zA-Z\-\_]{20}",
+    "NPM Access Token": r"(?i)\b(npm_[a-z0-9]{36})(?:['|\"|\n|\r|\s|\x60]|$)"
  }
 
 def direct_scan(link) -> None:
@@ -85,8 +96,6 @@ def direct_scan(link) -> None:
 
         if(match):
             print(f"\n[bold green][+] {key} found in {link} ~ [red]{match}[/][/]\n")
-        else:
-            pass
 
 def passed_scan(final_url):
     " Parse the URL before open JavaScript directly "
@@ -101,5 +110,3 @@ def passed_scan(final_url):
 
         if(match):
             print(f"\n[bold green][+] {key} found in {final_url} ~ [red]{match}[/][/]\n")
-        else:
-            pass
