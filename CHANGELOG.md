@@ -13,7 +13,7 @@
     - NPM Access Token
 
 - Fixed GCP API Key regex
-- Removed useless else code
+- Removed useless if/else code
 
 # 🎉 1.5a - 28/07/2022
 - Added 2 new secrets regex patterns:
