@@ -54,7 +54,7 @@ If you want to use pinkerton in a Docker container, follow this commands:
 <br><br>
 
 ### 🎥 Demo
-[![asciicast](https://asciinema.org/a/7gybqzcDsIm0nkDhUhhI9JFRA.svg)](https://asciinema.org/a/7gybqzcDsIm0nkDhUhhI9JFRA)
+[![asciicast](https://asciinema.org/a/SDDtLFRPcauGY1Z5WFLcsc0dI.svg)](https://asciinema.org/a/SDDtLFRPcauGY1Z5WFLcsc0dI)
 
 <br><br>
 
