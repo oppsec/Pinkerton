@@ -68,7 +68,7 @@ If you want to use pinkerton in a Docker container, follow this commands:
 <br><br>
 
 ### 📚 To-Do
-- [ ] Add more secrets regex pattern
+- [x] Add more secrets regex pattern
 - [ ] Improve JavaScript file extract function
 - [ ] Improve pattern match system
 - [ ] Add pass list file method
@@ -91,8 +91,9 @@ A quick guide of how to contribute with the project.
 <br><br>
 
 ### 🙏 Credits
-- [m4ll0k (SecretFinder creator)](https://github.com/m4ll0k) for the secrets regex patterns
-- [h33lit (Jubaer Alnazi)](https://github.com/h33tlit) for the secrets regex patterns
+- [m4ll0k (SecretFinder creator)](https://github.com/m4ll0k) for the regex patterns
+- [h33lit (Jubaer Alnazi)](https://github.com/h33tlit) for the regex patterns
+- [zricethezav (GitLeaks creator)](https://github.com/zricethezav/gitleaks) for the regex patterns
 
 <br><br>
 
