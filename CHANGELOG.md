@@ -1,3 +1,12 @@
+# 🎉 1.6a - 04/08/2022
+- Added 4 new secrets regex patterns:
+    - Shopify Access Token
+    - Shopify Custom Access Token
+    - Shopify Private App Access Token
+    - Shopify Shared Secret
+
+- Changed regex and jsbeautify import libs
+
 # 🎉 1.6 - 31/07/2022
 - Added 11 new secrets regex patterns:
     - URL Schemes

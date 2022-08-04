@@ -2,10 +2,9 @@
 
 from requests import get
 from rich import print
+from jsbeautifier import beautify
+from re import findall
 from src.pinkerton.settings import props
-
-import re
-import jsbeautifier
 
 regex_list = {
     'Google API': r'AIza[0-9A-Za-z-_]{35}',
@@ -80,7 +79,11 @@ regex_list = {
     "Dynatrace API Token": r"dt0c01\.(?i)[a-z0-9]{24}\.[a-z0-9]{64}",
     "EasyPost API Token": r"EZAK(?i)[a-z0-9]{54}",
     "GitLab Personal Access Token": r"glpat-[0-9a-zA-Z\-\_]{20}",
-    "NPM Access Token": r"(?i)\b(npm_[a-z0-9]{36})(?:['|\"|\n|\r|\s|\x60]|$)"
+    "NPM Access Token": r"(?i)\b(npm_[a-z0-9]{36})(?:['|\"|\n|\r|\s|\x60]|$)",
+    "Shopify Private APP Access Token": r"shppa_[a-fA-F0-9]{32}",
+    "Shopify Shared Secret": r"shpss_[a-fA-F0-9]{32}",
+    "Shopify Custom Access Token": r"shpca_[a-fA-F0-9]{32}",
+    "Shopify Access Token": r"shpat_[a-fA-F0-9]{32}"
  }
 
 def direct_scan(link) -> None:
@@ -88,11 +91,11 @@ def direct_scan(link) -> None:
     
     response: function = get(link, **props, timeout=30)
     content: str = response.text
-    content: str = jsbeautifier.beautify(content)
+    content: str = beautify(content)
 
     for key, value in regex_list.items():
         pattern = value
-        match = re.findall(pattern, content)
+        match = findall(pattern, content)
 
         if(match):
             print(f"\n[bold green][+] {key} found in {link} ~ [red]{match}[/][/]\n")
@@ -102,11 +105,11 @@ def passed_scan(final_url):
 
     response: function = get(final_url, **props, timeout=30)
     content: str = response.text
-    content: str = jsbeautifier.beautify(content)
+    content: str = beautify(content)
 
     for key, value in regex_list.items():
         pattern = value
-        match = re.findall(pattern, content)
+        match = findall(pattern, content)
 
         if(match):
             print(f"\n[bold green][+] {key} found in {final_url} ~ [red]{match}[/][/]\n")
