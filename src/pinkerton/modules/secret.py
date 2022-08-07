@@ -70,7 +70,6 @@ regex_list = {
     "Twilio API Key": r"SK[0-9a-fA-F]{32}",
     "Square Access Token": r"sq0atp-[0-9A-Za-z\\-_]{22}",
     "Square OAuth Secret": r"sq0csp-[0-9A-Za-z\\-_]{43}",
-    "IPv4 IP Address": r"\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\b",
     "URL": r'(https?|ftp)://(-\.)?([^\s/?\.#-]+\.?)+(/[^\s]*)?$iS',
     "Adobe Client Secret": r'''(?i)\b((p8e-)(?i)[a-z0-9]{32})(?:['|\"|\n|\r|\s|\x60]|$)''',
     "Alibaba AccessKey ID": r"(?i)\b((LTAI)(?i)[a-z0-9]{20})(?:['|\"|\n|\r|\s|\x60]|$)",
@@ -83,7 +82,9 @@ regex_list = {
     "Shopify Private APP Access Token": r"shppa_[a-fA-F0-9]{32}",
     "Shopify Shared Secret": r"shpss_[a-fA-F0-9]{32}",
     "Shopify Custom Access Token": r"shpca_[a-fA-F0-9]{32}",
-    "Shopify Access Token": r"shpat_[a-fA-F0-9]{32}"
+    "Shopify Access Token": r"shpat_[a-fA-F0-9]{32}",
+    "Asana Client ID": r"""(?i)(?:asana)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([0-9]{16})(?:['|\"|\n|\r|\s|\x60|;]|$)""",
+    "Asana Client Secret": r"""(?i)(?:asana)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{32})(?:['|\"|\n|\r|\s|\x60|;]|$)"""
  }
 
 def direct_scan(link) -> None:
