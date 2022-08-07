@@ -1,3 +1,10 @@
+# 🎉 1.6b - 06/08/2022
+- Added 2 new secrets regex patterns:
+    - Asana Client ID
+    - Asana Client Secret
+
+- IPv4 regex pattern removed because of false positives
+
 # 🎉 1.6a - 04/08/2022
 - Added 4 new secrets regex patterns:
     - Shopify Access Token
