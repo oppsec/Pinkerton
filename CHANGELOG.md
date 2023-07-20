@@ -1,4 +1,4 @@
-# 🎉 1.6c - 06/08/2022
+# 🎉 1.6c - 20/07/2023
 - Major changes
 - Removed "assets" folder (moved banner img to imgur)
 
