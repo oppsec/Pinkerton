@@ -1,3 +1,7 @@
+# 🎉 1.6c - 06/08/2022
+- Major changes
+- Removed "assets" folder (moved banner img to imgur)
+
 # 🎉 1.6b - 06/08/2022
 - Added 2 new secrets regex patterns:
     - Asana Client ID

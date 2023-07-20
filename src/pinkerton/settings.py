@@ -1,15 +1,14 @@
-from random import randint
+from random import choice
 
 def get_user_agent() -> str:
-    " Return a random User-Agent from data/user-agents.txt file and use in the request"
+    " Return a random User-Agent from user-agents.txt file to be used on request "
 
     file_path: str = 'src/pinkerton/data/user-agents.txt'
     with open(file_path) as content:
-        user_agent: str = content.readlines()
-        user_agent: str = user_agent[randint(0, len(user_agent) -1)]
-        user_agent: str = user_agent.encode("utf-8")
+        user_agents: str = content.readlines()
+        user_agent: str = choice(user_agents).strip()
 
-        return str(user_agent)
+        return user_agent
 
 headers = {
     'User-Agent': get_user_agent(),
@@ -17,7 +16,7 @@ headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 }
 
-props = {
+props = { 
     'verify': False,
     'allow_redirects': True,
     'headers': headers

@@ -2,19 +2,19 @@
 > Investigating JavaScripts files since 1850
 
 <div align="center">
-    <img src="./assets/preview.png">
+    <img src="https://i.imgur.com/GvPspEa.png" width=920>
 </div>
 
 <br>
 
 <p align="center">
-    <img src="https://img.shields.io/github/license/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
-    <img src="https://img.shields.io/github/issues/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
-    <img src="https://img.shields.io/github/stars/oppsec/pinkerton?color=green&logo=github&style=for-the-badge">
-    <img src="https://img.shields.io/github/forks/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
-    <img src="https://img.shields.io/github/v/release/oppsec/pinkerton?color=green&logo=github&style=for-the-badge">
-    <img src="https://img.shields.io/github/languages/code-size/oppsec/Pinkerton?color=green&logo=github&style=for-the-badge">
-    <img src="https://img.shields.io/librariesio/github/oppsec/pinkerton?color=green&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/license/oppsec/Pinkerton?color=yellow&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/issues/oppsec/Pinkerton?color=yellow&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/stars/oppsec/pinkerton?color=yellow&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/forks/oppsec/Pinkerton?color=yellow&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/v/release/oppsec/pinkerton?color=yellow&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/github/languages/code-size/oppsec/Pinkerton?color=yellow&logo=github&style=for-the-badge">
+    <img src="https://img.shields.io/librariesio/github/oppsec/pinkerton?color=yellow&logo=github&style=for-the-badge">
 </p>
 
 ___
