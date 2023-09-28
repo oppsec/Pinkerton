@@ -21,7 +21,7 @@ ___
 
 <br>
 
-<p> ️🕵️ <b>Pinkerton</b> is a Python tool created to crawl JavaScript files and search for secrets </p>
+<p> ️🕵️ <b>Pinkerton</b> is an JavaScript file crawler and secret finder tool developed in Python  </p>
 
 <br>
 
