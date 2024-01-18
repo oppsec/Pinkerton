@@ -42,6 +42,7 @@ If you're using Python 3.11+ + Arch (as me) you're probably getting errors when 
 <br>
 
 ### 🐳 Docker
+
 If you want to use pinkerton in a Docker container, follow this commands:
 
 ```
@@ -53,17 +54,28 @@ If you want to use pinkerton in a Docker container, follow this commands:
 <br><br>
 
 ### ⚙️ Pre-requisites
+
 - [Python 3](https://www.python.org/downloads/) installed on your machine.
 - Install the libraries with `pip3 install -r requirements.txt`
 
 <br><br>
 
-### 🎥 Demo
+### ⚫ BlackArch
+
+```
+pacman -Syu pinkerton
+```
+
+<br><br>
+
+## 🎥 Demo
+
 [![asciicast](https://asciinema.org/a/SDDtLFRPcauGY1Z5WFLcsc0dI.svg)](https://asciinema.org/a/SDDtLFRPcauGY1Z5WFLcsc0dI)
 
 <br><br>
 
-### ✨ Features
+## ✨ Features
+
 - Works with ProxyChains
 - Fast scan
 - Low RAM and CPU usage
@@ -72,7 +84,8 @@ If you want to use pinkerton in a Docker container, follow this commands:
 
 <br><br>
 
-### 📚 To-Do
+## 📚 To-Do
+
 - [x] Add more secrets regex pattern
 - [ ] Improve JavaScript file extract function
 - [ ] Improve pattern match system
@@ -80,7 +93,7 @@ If you want to use pinkerton in a Docker container, follow this commands:
 
 <br><br>
 
-### 🔨 Contributing
+## 🔨 Contributing
 
 A quick guide of how to contribute with the project.
 
@@ -95,12 +108,14 @@ A quick guide of how to contribute with the project.
 
 <br><br>
 
-### 🙏 Credits
+## 🙏 Credits
+
 - [m4ll0k (SecretFinder creator)](https://github.com/m4ll0k) for the regex patterns
 - [h33lit (Jubaer Alnazi)](https://github.com/h33tlit) for the regex patterns
 - [zricethezav (GitLeaks creator)](https://github.com/zricethezav/gitleaks) for the regex patterns
 
 <br><br>
 
-### ⚠️ Warning
+## ⚠️ Warning
+
 - The developer is not responsible for any malicious use of this tool.
