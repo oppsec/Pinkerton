@@ -33,6 +33,10 @@ ___
 1. Clone the repository with: git clone https://github.com/oppsec/pinkerton.git
 2. Install the libraries with: pip3 install -r requirements.txt
 3. Run Pinkerton with: python3 main.py -u https://example.com
+
+3.1 (Optional)
+If you're using Python 3.11+ + Arch (as me) you're probably getting errors when trying to install the libs from requirements.txt, to fix this, use:
+- pip3 install -r requirements.txt --break-system-packages
 ```
 
 <br>
